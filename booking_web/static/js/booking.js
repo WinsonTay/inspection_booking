@@ -115,8 +115,7 @@ function validateForm(e){
     
     if (mobile == "" || mobile == null) {
         errorMsg.push('Telephone Number Field cannot be empty')
-    }    
-    if (phoneReg.test(mobile) == false || mobile.length != 10) {
+    }else if (phoneReg.test(mobile) == false || mobile.length != 10) {
         errorMsg.push('Mobile phone number format wrong, Ex: 0127898903')
     }
     
