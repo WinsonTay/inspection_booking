@@ -4,6 +4,8 @@ bookBtn = document.getElementById('submit_book')
 validationText = document.getElementsByClassName('validation')
 timeSlot = document.getElementById('time-slot')
 timeSelect = document.getElementById('time-select')
+var domain = window.location.href
+
 var userBooking = []
 
 function getHoursBooking(dateSelected){
@@ -62,7 +64,7 @@ function submitDate(dateSelected){
             }
         }
     }
-    xhttp.open("POST",'http://localhost:5000/api/v1/users/timeslot',true)
+    xhttp.open("POST", domain+'api/v1/users/timeslot',true)
     xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded")
     $('#time-select').removeClass('displayBlock')
     $('#time-select').addClass('displayNone')
@@ -95,7 +97,7 @@ function submitUser(){
 
 
     }
-    xhttp.open("POST",'http://localhost:5000/api/v1/users/validate',true)
+    xhttp.open("POST",domain+'api/v1/users/validate',true)
     xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded")
     var postVars = 'mobile='+mobile+'&name='+name
     xhttp.send(postVars);
@@ -155,7 +157,7 @@ function bookSlot(){
         }
 
     }
-    xhttp.open("POST",'http://localhost:5000/api/v1/users/book',true)
+    xhttp.open("POST",domain+'api/v1/users/book',true)
     xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded")
     var postVars = 'name='+name+'&mobile=' + mobile  + '&date=' + serverDate + '&time=' + time  
     xhttp.send(postVars);
@@ -168,6 +170,8 @@ submitBtn.addEventListener('click', validateForm)
 bookBtn.addEventListener('click', e => {e.preventDefault(); bookSlot()})
 
 $(document).ready(function(){
+    var domain = window.location.href
+    console.log(domain)
     $('.datepickerM').datepicker({
         minDate: new Date(today.setDate(today.getDate() + (3 * 7))),
         defaultDate: new Date(today),
