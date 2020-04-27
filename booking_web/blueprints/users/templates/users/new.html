@@ -1,0 +1,53 @@
+{% extends "_layout.html" %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+  {% for message in messages %}
+    <li>{{ message }}</li>
+  {% endfor %}
+  </ul>
+{%endif%}
+{% endwith %}
+<!-- Error Messages -->
+{% for error in errors if errors|length > 0 %}
+  <li class="error"><font color="red">{{error}}</font></li>
+{% endfor %}
+<div class ="d-flex justify-content-center">
+  <div class='nameForm w-50 ml-5'>
+    <h5 class ="text-dark">Enter Details for Inspection</h5>  
+    <form name='user_form'>
+        
+          <div class="form-group w-75 text-light">
+              <label for="name">Name:</label>
+              <input type='text' name='name' place_holder ='Enter Name..' class="form-control" />
+    
+              <label for="tel">Mobile No:</label>
+              <input type='text' placeholder="0123456789" name='tel' required maxlength="10" class="form-control"/>
+              
+              <!-- Date Selection  -->
+              <div id='date-select' style='display:none'>
+                <label for="date">Date:</label>
+                  <input type="text" placeholder="Select Booking Date.. " class="datepickerM">
+             </div>
+             <!--Loading Progress  -->
+            <div class="progress displayNone">
+                <div class="indeterminate"></div>
+            </div>
+      
+             <!-- Time Select -->
+            <div id='time-select' class='input-field col s12 displayNone'>
+              <select id='time-slot' aria-placeholder="Select Time.." value ="" name="time">
+              </select>
+              <label>Time Selection:</label>s
+            </div>
+
+          </div>
+            <button id='user_detail' type="submit" class="btn btn-primary">Submit</button>
+            <button id='submit_book' type="submit" class="btn btn-primary" style="display:none; width:75%">Book</button>
+      </form>
+      <div class='validation' style='display:none'></div>
+</div>
+ 
+</div>
+{% endblock %}

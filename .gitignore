@@ -1,0 +1,9 @@
+.vscode
+*.DS_Store
+*__pycache__
+*.env
+*.csv
+booking_web/static/.webassets-cache
+booking_web/static/gen
+booking_web/static/images
+booking_web/static/css/vendor/svgs

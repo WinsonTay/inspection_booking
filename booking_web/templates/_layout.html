@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='image/favicon.ico') }}"> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+
+    <!-- <link rel="stylesheet" href="../static/css/vendor/bootstrap-4.1.3.css">
+    <link rel="stylesheet" href="../static/css/custom.css"> -->
+    {% assets "home_css" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    {% endassets %}
+    
+    <!-- {% assets "home_js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    <script src="https://kit.fontawesome.com/9a322dcc73.js" crossorigin="anonymous"></script>
+    {% endassets %} -->
+
+    {% block header %}
+    {% endblock %}
+
+    <title>
+      {% block title %}
+      {% endblock %}Booking
+    </title>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+      <a class="navbar-brand navlogo" href="#">Book Your Inspection Slot Today</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          
+          <!-- <a class="nav-item nav-link active" href="{{ url_for('users.new') }}">Sign Up</a> -->
+          <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+        </div>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+
+    {% assets "home_js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    <!-- <script src="https://kit.fontawesome.com/9a322dcc73.js" crossorigin="anonymous"></script> -->
+    {% endassets %}
+
+    <footer>
+    </footer>
+  </body>
+</html>
