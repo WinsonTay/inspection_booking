@@ -160,5 +160,9 @@ option:disabled{
   right: auto !important;
   top: 2%;
   left:50%;
+}
 
+#time-select{
+  min-width:195px;
+  padding-left: 0px !important;
 }
