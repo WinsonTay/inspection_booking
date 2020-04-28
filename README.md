@@ -28,3 +28,5 @@ phoneReg = /^01\d{8}/g
         submitUser();
     } 
 ```
+## Retrive User Bookings after Validate from server
+<img src='./images/bookings.jpg' title="User Booking"></a>

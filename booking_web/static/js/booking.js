@@ -85,7 +85,7 @@ function submitUser(){
         {
             if (xhttp.status == 200){
                 userBooking =  JSON.parse(this.responseText).bookings
-                // Push user Bookings into array here for comparision latear.
+                console.log(JSON.parse(this.responseText))
 
                 bookingForm.style.display = 'block';
                 // validationText[0].innerHTML = 'Contact Details Validated';
