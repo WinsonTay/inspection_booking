@@ -45,6 +45,7 @@ def timeslot():
     data['timeslot'] = [{'time': (start_time+timedelta(minutes=i*30)).strftime('%I:%M %p') , 
                          'slot_available':check_slot_available(start_time+timedelta(minutes=i*30),booking_list)} for i in range (0,19) ] 
     data['date'] = dateinput
+    # Simulate Loading Graphic.. put some delay.
     ti.sleep(0.1);
     return make_response(jsonify(data),200)
 

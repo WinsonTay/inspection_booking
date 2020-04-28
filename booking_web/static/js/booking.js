@@ -29,7 +29,7 @@ function submitDate(dateSelected){
             if (xhttp.status == 200){
                 
                 slotAvailable = (JSON.parse(this.responseText)).timeslot
-                
+                console.log(JSON.parse(this.responseText))
                 timeSlot.innerHTML = ""
                 $('#time-select').removeClass('displayNone')
                 $('#time-select').addClass('displayBlock')
@@ -46,18 +46,19 @@ function submitDate(dateSelected){
                     option.value = elem.time
                     
                     hour = moment(elem.time , 'hh:mm a').hours()
+                    // if user already book this hour.. 
                     if(userhoursBooked.includes(hour)){
                         option.innerHTML=elem.time + " (You Have booked this slot)"
                         option.disabled = true
+                    // if have free slots ... 
                     }else if (elem.slot_available > 0) {
                        option.innerHTML = elem.time + '  '+ `(${elem.slot_available} slot left )` 
+                    // if Slot already full ... 
                     }else if(elem.slot_available==0){
                        option.innerHTML = elem.time + ' (Slot Full)';
                        option.disabled = true
                     }
-                    // bookedHour = filteredDate.filter(date => {
-                    //         time = moment(date).format('%H') 
-                    // })
+                  
                     timeSlot.appendChild(option);
                 });
                 $('select').formSelect();
