@@ -23,7 +23,7 @@
               <input type='text' name='name' place_holder ='Enter Name..' class="form-control" />
     
               <label for="tel">Mobile No:</label>
-              <input type='text' placeholder="0123456789" name='tel' required maxlength="10" class="form-control"/>
+              <input type='number' placeholder="0123456789" name='tel' onpaste="return false;" required maxlength="10" class="form-control"/>
               
               <!-- Date Selection  -->
               <div id='date-select' style='display:none'>
@@ -37,7 +37,7 @@
       
              <!-- Time Select -->
             <div id='time-select' class='input-field col-6 s12 displayNone'>
-              <select id='time-slot' aria-placeholder="Select Time.." value ="" name="time">
+              <select id='time-slot' aria-placeholder="Select Time.." value =""  name="time">
               </select>
               <label>Time Selection:</label>s
             </div>

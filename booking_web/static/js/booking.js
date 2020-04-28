@@ -105,7 +105,7 @@ function submitUser(){
 }
 function validateForm(e){
     e.preventDefault()
-    phoneReg = /^01/g
+    phoneReg = /^01\d{8}/g
     name  = document.user_form.name.value
     mobile = document.user_form.tel.value
     inputs = document.user_form.getElementsByTagName('input')
@@ -117,7 +117,7 @@ function validateForm(e){
     
     if (mobile == "" || mobile == null) {
         errorMsg.push('Telephone Number Field cannot be empty')
-    }else if (phoneReg.test(mobile) == false || mobile.length != 10) {
+    }else if (phoneReg.test(mobile) == false) {
         errorMsg.push('Mobile phone number format wrong, Ex: 0127898903')
     }
     
@@ -190,4 +190,9 @@ $(document).ready(function(){
 });
 $('.datepickerM').change(() => submitDate(serverDate))
 
-// console.log($date)
+$(document).on('keypress', ':input[type="number"]', function (e) {
+    if (isNaN(e.key) || (this.value.length > 9)) {
+        return false;
+    }
+});
+

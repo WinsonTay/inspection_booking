@@ -166,3 +166,9 @@ option:disabled{
   min-width:195px;
   padding-left: 0px !important;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
