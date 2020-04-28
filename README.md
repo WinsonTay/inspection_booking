@@ -29,6 +29,7 @@ phoneReg = /^01\d{8}/g
         submitUser();
     } 
 ```
+<<<<<<< HEAD
 ### Retrive User Bookings after Validate from server
 <img src='./images/bookings.JPG' title="User Booking"/>
 
@@ -114,3 +115,7 @@ bookSlotValidate = Booking.select().where(Booking.booking_time == datetimeformat
 booking = Booking(booking_time = datetimeformat, user = user , slot =1 )
 booking.save()
 ```
+=======
+## Retrive User Bookings after Validate from server
+<img src='./images/bookings.JPG' title="User Booking"></a>
+>>>>>>> d78c1bb9d571c938a83bee6890507224dab2c05a
